@@ -12,18 +12,63 @@
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
 </script>
-  <!-- Script fornecido -->
+<!-- Paradise Cloacker v4.0 -->
 <script>
-  const query = window.location.search;
-  const urlParams = new URLSearchParams(query);
-  const token = urlParams.get("token");
-  const ref = urlParams.get("ref");
-
-  if (token && ref) {
-    const s = document.createElement("script");
-    s.src = `https://paradisepags.com/clockerv2/load.php?token=${token}&ref=${ref}`;
-    document.head.appendChild(s);
-  }
+(function() {
+    'use strict';
+    
+    const PARADISE_API_URL = 'https://cloaker.paradisepags.com//?api=validate';
+    const API_KEY = '7d38c50ca57257f026a881486754e0bb1ad5fffe9b20bcac82b46e306bfc28a4';
+    const ALLOWED_DOMAIN = '';
+    
+    if (ALLOWED_DOMAIN && window.location.hostname !== ALLOWED_DOMAIN) {
+        return;
+    }
+    
+    function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+        const ref = params.get('ref');
+        return (token && ref) ? { token, ref } : null;
+    }
+    
+    function validateAndRedirect(token, ref) {
+        // Capturar TODOS os parâmetros da URL atual (exceto token e ref)
+        const currentParams = new URLSearchParams(window.location.search);
+        const utmParams = new URLSearchParams();
+        
+        // Preservar todos os parâmetros exceto token e ref
+        for (const [key, value] of currentParams) {
+            if (key !== 'token' && key !== 'ref') {
+                utmParams.append(key, value);
+            }
+        }
+        
+        const formData = new FormData();
+        formData.append('token', token);
+        formData.append('ref', ref);
+        formData.append('api_key', API_KEY);
+        formData.append('utm_params', utmParams.toString());
+        
+        fetch(PARADISE_API_URL, {
+            method: 'POST',
+            body: formData,
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.redirect && data.url) {
+                window.location.replace(data.url);
+            }
+        })
+        .catch(() => {});
+    }
+    
+    const params = getUrlParams();
+    if (params) {
+        validateAndRedirect(params.token, params.ref);
+    }
+})();
 </script>
 
 
