@@ -1,9 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Como Fast Foods Funcionam</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Opina - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais baseados nos arquivos originais */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Contêiner principal da tela de login */
+        #login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Caixa externa com sombra */
+        .outer-box-login {
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        /* Caixa branca interna do formulário */
+        .white-box-login {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .white-box-login img {
+            width: 30%;
+            max-width: 120px;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .popup-textL {
+            text-align: center;
+            color: #656565;
+            margin-bottom: 10px;
+        }
+
+        .popup-textL.bold {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .popup-textL.small {
+            font-size: 15px;
+        }
+
+        /* Campo de e-mail */
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+        }
+
+        /* Botão de entrar */
+        .prosseguir-button {
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .prosseguir-button:hover {
+            background-color: #17a74a;
+        }
+
+        /* Rodapé */
+        .footer-text {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #656565;
+        }
+
+        .footer-text p {
+            margin: 5px 0;
+        }
+
+        .footer-text p.bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 <script>
   window.pixelId = "670d0a90d882f256a39fc839";
   var a = document.createElement("script");
@@ -70,47 +186,24 @@
     }
 })();
 </script>
+    <div id="login">
+        <div class="outer-box-login">
+            <div class="white-box-login">
+                <img src="https://storage.googleapis.com/gemini-assets/2024-05-14/images/opinilogo.png" alt="Spotify Opina Logo">
+                <p class="popup-textL bold">Bem-vindo(a) ao SpotifyOpina</p>
+                <p class="popup-textL small">Insira seu e-mail para prosseguir!</p>
+                
+                <input class="form-input" type="email" placeholder="Seu melhor e-mail">
+                
+                <button class="prosseguir-button" type="button">ENTRAR</button>
+            </div>
+        </div>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #d35400;
-    }
-    section {
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Como Fast Foods Funcionam</h1>
+        <div class="footer-text">
+            <p class="bold">© 2024 Spotify LLC</p>
+            <p>Termos e Politica de Privacidade</p>
+        </div>
+    </div>
 
-  <section>
-    <h2>1. Pedido</h2>
-    <p>O cliente faz o pedido no balcão, no drive-thru ou por meio de aplicativos.</p>
-  </section>
-
-  <section>
-    <h2>2. Preparação</h2>
-    <p>A cozinha utiliza processos padronizados e ingredientes pré-preparados para agilizar o preparo.</p>
-  </section>
-
-  <section>
-    <h2>3. Montagem</h2>
-    <p>Os alimentos são montados conforme o pedido, muitas vezes por uma linha de produção.</p>
-  </section>
-
-  <section>
-    <h2>4. Entrega</h2>
-    <p>O pedido é entregue ao cliente rapidamente, geralmente em poucos minutos.</p>
-  </section>
-
-  <section>
-    <h2>5. Eficiência e Padronização</h2>
-    <p>As redes de fast food operam com foco em rapidez, consistência e baixo custo operacional.</p>
-  </section>
 </body>
 </html>
